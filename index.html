@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Encriptador de texto</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Arima:wght@700&family=Mulish:wght@400;700&display=swap" rel="stylesheet">
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="js/app.js"></script>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+        <header class="encabezado">
+           
+            <div class="cabecera contenedor">
+                <div class="logo">
+                    <img src="media/Logo.svg">
+                </div>
+
+                <div class="titulo">
+                    <h1 id="titulo">Encriptador</h1>
+                </div>
+            </div>
+        </header>
+
+        <main class="principal">
+
+            <div class="cuerpo contenedor">
+                <div class="mensajes contenedor">
+                    <div class="reglas">
+                        <img id="animacion" src="media/animacion.gif">
+                        <ul>
+                            <li>Todo texto ingresado será convertido a minúsculas. no se admiten mayúsculas para la entrada.</li>
+                            <li>No puede ingresar acentos.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="panelEntrada">
+                    <h2 id="entrada">Entrada</h2>
+                    <textarea class="textoEntrada" placeholder="Ingrese el texto aquí"></textarea>
+                </div>
+
+                <div class="panelSalida">
+                    <h2 id="salida">Salida</h2>
+                    <textarea class="textoSalida" placeholder="Ningún texto encontrado" readonly></textarea>
+                </div>
+            </div>
+
+            <div class="botones contenedor">
+                <div class="botonesEncriptacion">
+                    <button class="botonEncriptar" onclick="btnEncriptar()">Encriptar</button>
+                    <button class="botonDesencriptar" onclick="btnDesencriptar()">Desencriptar</button>
+                </div>
+
+                <div class="botonesCopiar" id="btnsCopiar-Limpiar">
+                    <button class="botonCopiar" onclick="btnCopiar()">Copiar</button>
+                    <button class="botonLimpiar" onclick="limpiar()">Limpiar</button>
+                </div>
+            </div>
+
+            
+
+        </main>
+
+        <footer>
+            <div class="piePagina contenedor">
+                <div class="redes">
+                    <a href="https://github.com/lfkanselmo"><img class="link-redes" src="media/github.svg" alt="github.com"></a>
+                    <a href="https://www.linkedin.com/in/anselmo-ortega-acosta/"><img class="link-redes" src="media/linkedin.svg" alt="linkedind.com"></a>
+                </div>
+
+                <div class="copy">
+                    <p class="copyright">lfkanselmo@gmail.com</p>
+                    <p class="copyright">&COPYAnselmo Ortega 2023</p>
+                </div>
+            </div>
+        </footer>
+        
+    </body>
+</html>
