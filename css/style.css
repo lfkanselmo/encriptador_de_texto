@@ -27,7 +27,6 @@ body{
     max-width: 144rem;
     margin: 0 auto;
     width: 95%;
-    height: fit-content;
     display: flex;
     align-items: center;
     justify-content:center;
@@ -276,7 +275,6 @@ li:hover{
     flex-direction: row;
     justify-content:space-evenly;
     padding: 0 auto;
-    gap: 4rem;
 }
 
 .botonesEncriptacion{
@@ -299,7 +297,6 @@ li:hover{
 
 @media screen and (max-width:768px) {
     .botones{
-        flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 1rem;
