@@ -113,5 +113,11 @@ function btnCopiar(){
 
 /*Función para actualizar la página*/
 function limpiar(){
-    window.location.reload();
+    const entrada = document.querySelector(".textoEntrada");
+    const salida = document.querySelector(".textoSalida");
+
+    entrada.value = "";
+    salida.value = "";
+
+    document.getElementById("btnsCopiar-Limpiar").style.display = "none";
 }
