@@ -27,7 +27,7 @@ function btnEncriptar(){
 /*Función para ENCRIPTAR la cadena de texto*/
 function encriptar(cadenaEncriptada){
     cadenaEncriptada = cadenaEncriptada.toLowerCase();
-    var pasa = true;
+    let pasa = true;
 
     for (let j=0; j<llaves.length; j++){
         if (cadenaEncriptada.includes(llavesAcentos[j])) {
@@ -46,6 +46,7 @@ function encriptar(cadenaEncriptada){
     } else {
         for (let j=0; j<llaves.length; j++){
             if (cadenaEncriptada.includes(llaves[j][0])) {
+                cadenaEncriptada = cadenaEncriptada.replaceAll(/[^0-9a-z.,; ]/g,"");
                 cadenaEncriptada = cadenaEncriptada.replaceAll(llaves[j][0],llaves[j][1]);
             }
         }
@@ -77,7 +78,7 @@ function btnDesencriptar(){
 /*Función para DESENCRIPTAR la cadena de texto*/
 function desencriptar(cadenaDesencriptada){
     cadenaDesencriptada = cadenaDesencriptada.toLowerCase();
-    var pasa = true;
+    let pasa = true;
 
     for (let j=0; j<llaves.length; j++){
         if (cadenaDesencriptada.includes(llavesAcentos[j])) {
@@ -96,6 +97,7 @@ function desencriptar(cadenaDesencriptada){
     } else {
         for (let j=0; j<llaves.length; j++){
             if (cadenaDesencriptada.includes(llaves[j][1])) {
+                cadenaDesencriptada = cadenaDesencriptada.replaceAll(/[^0-9a-z.,; ]/g,"");
                 cadenaDesencriptada = cadenaDesencriptada.replaceAll(llaves[j][1],llaves[j][0]);
             }
         }

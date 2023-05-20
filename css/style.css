@@ -40,7 +40,7 @@ textarea{
     height: 40rem;
     border-radius: 2rem;
     background:var(--cajaTexto-Color);
-    box-shadow: 5px 5px 5px #00132b;
+    box-shadow: 0.5rem 0.5rem 0.5rem #00132b;
     font-weight: 400;
     font-size: 3rem;
     text-align: justify;
@@ -70,7 +70,7 @@ p,li{
 button{
     font-family: var(--parrafos-Fuente);
     background: lightblue;
-    width: 19rem;
+    width: 20rem;
     height: 6rem;
     border: none;
     border-radius: 3rem;
@@ -80,13 +80,14 @@ button{
     color: #0A3871;
     transition: 0.2s all;
     cursor: pointer;
-    box-shadow: 5px 5px 5px #00132b;
+    box-shadow: 0.5rem 0.5rem 0.5rem #00132b;
 }
 
 button:hover{
     transform: scale(1.03);
     color: white;
     background: var(--botonOn-Color);
+    box-shadow: 0.5rem 0.5rem 0.5rem white;
 }
 
 /*ENCABEZADO DE LA PAGINA ----------------------------------------*/
@@ -144,7 +145,7 @@ button:hover{
     background: lightblue;
     border-radius: 3rem;
     border: none;
-    box-shadow: 5px 5px 5px #00132b;
+    box-shadow: 0.5rem 0.5rem 0.5rem #00132b;
 }
 
 .reglas{
@@ -310,6 +311,7 @@ li:hover{
 
     button{
         margin: 2rem auto 2rem auto;
+        font-size: 2rem;
     }
 }
 
