@@ -19,6 +19,8 @@ function btnEncriptar(){
             text:"No ha ingresado nada en la entrada",
             icon:"error"
          });
+
+         document.getElementById("btnsCopiar-Limpiar").style.display = "none";
     } else{
         document.getElementById("btnsCopiar-Limpiar").style.display = "flex";
     }
@@ -70,6 +72,8 @@ function btnDesencriptar(){
             text:"No ha ingresado nada en la entrada",
             icon:"error"
          });
+
+         document.getElementById("btnsCopiar-Limpiar").style.display = "none";
     } else{
         document.getElementById("btnsCopiar-Limpiar").style.display = "flex";
     }
