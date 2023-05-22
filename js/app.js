@@ -8,10 +8,10 @@ const salida = document.querySelector(".textoSalida");
 function btnEncriptar(){
     const entrada = document.querySelector(".textoEntrada");
     const salida = document.querySelector(".textoSalida");
+    textoEntrada = entrada.value.trim();
 
-    const textoEncriptado = encriptar(entrada.value);
+    const textoEncriptado = encriptar(textoEntrada);
     salida.value = textoEncriptado;
-    entrada.value = "";
 
     if (textoEncriptado=="") {
         swal({
@@ -22,6 +22,7 @@ function btnEncriptar(){
 
          document.getElementById("btnsCopiar-Limpiar").style.display = "none";
     } else{
+        entrada.value = "";
         document.getElementById("btnsCopiar-Limpiar").style.display = "flex";
     }
 }
@@ -43,7 +44,6 @@ function encriptar(cadenaEncriptada){
             text:"No se admiten vocales con acento",
             icon:"error"
         });
-
         return " ";
     } else {
         for (let j=0; j<llaves.length; j++){
@@ -56,14 +56,14 @@ function encriptar(cadenaEncriptada){
     }
 }
 
-/*Función para el botón encriptar*/
+/*Función para el botón Desencriptar*/
 function btnDesencriptar(){
     const entrada = document.querySelector(".textoEntrada");
     const salida = document.querySelector(".textoSalida");
+    textoEntrada = entrada.value.trim();
 
-    const textoDesencriptado = desencriptar(entrada.value);
+    const textoDesencriptado = desencriptar(textoEntrada);
     salida.value = textoDesencriptado;
-    entrada.value = "";
     
 
     if (textoDesencriptado=="") {
@@ -75,7 +75,9 @@ function btnDesencriptar(){
 
          document.getElementById("btnsCopiar-Limpiar").style.display = "none";
     } else{
+        entrada.value = "";
         document.getElementById("btnsCopiar-Limpiar").style.display = "flex";
+
     }
 }
 
@@ -117,7 +119,7 @@ function btnCopiar(){
     navigator.clipboard.writeText(copy);
 }
 
-/*Función para actualizar la página*/
+/*Función para limpiar la página*/
 function limpiar(){
     const entrada = document.querySelector(".textoEntrada");
     const salida = document.querySelector(".textoSalida");
