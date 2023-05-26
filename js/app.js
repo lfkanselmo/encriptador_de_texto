@@ -13,18 +13,22 @@ function btnEncriptar(){
     const textoEncriptado = encriptar(textoEntrada);
     salida.value = textoEncriptado;
 
-    if (textoEncriptado=="") {
-        swal({
-            title:"Alerta",
-            text:"No ha ingresado nada en la entrada",
-            icon:"error"
-         });
-
-         document.getElementById("btnsCopiar-Limpiar").style.display = "none";
-    } else{
+    if (textoEncriptado==" "){
+        document.getElementById("btnsCopiar-Limpiar").style.display = "none";
+        entrada.value = "";
+        salida.value = "";
+    } else if (textoEncriptado=="") {
+            swal({
+                title:"Alerta",
+                text:"No ha ingresado nada válido para encriptar en la entrada",
+                icon:"error"
+            });
+            entrada.value = "";
+            document.getElementById("btnsCopiar-Limpiar").style.display = "none";
+        } else{
         entrada.value = "";
         document.getElementById("btnsCopiar-Limpiar").style.display = "flex";
-    }
+        }
 }
 
 /*Función para ENCRIPTAR la cadena de texto*/
@@ -46,9 +50,9 @@ function encriptar(cadenaEncriptada){
         });
         return " ";
     } else {
+        cadenaEncriptada = cadenaEncriptada.replaceAll(/[^0-9a-z.,; ]/g,"");
         for (let j=0; j<llaves.length; j++){
             if (cadenaEncriptada.includes(llaves[j][0])) {
-                cadenaEncriptada = cadenaEncriptada.replaceAll(/[^0-9a-z.,; ]/g,"");
                 cadenaEncriptada = cadenaEncriptada.replaceAll(llaves[j][0],llaves[j][1]);
             }
         }
@@ -66,19 +70,22 @@ function btnDesencriptar(){
     salida.value = textoDesencriptado;
     
 
-    if (textoDesencriptado=="") {
-        swal({
-            title:"Alerta",
-            text:"No ha ingresado nada en la entrada",
-            icon:"error"
-         });
-
-         document.getElementById("btnsCopiar-Limpiar").style.display = "none";
-    } else{
+    if (textoDesencriptado==" "){
+        document.getElementById("btnsCopiar-Limpiar").style.display = "none";
+        entrada.value = "";
+        salida.value = "";
+    } else if (textoDesencriptado=="") {
+            swal({
+                title:"Alerta",
+                text:"No ha ingresado nada válido para encriptar en la entrada",
+                icon:"error"
+            });
+            entrada.value = "";
+            document.getElementById("btnsCopiar-Limpiar").style.display = "none";
+        } else{
         entrada.value = "";
         document.getElementById("btnsCopiar-Limpiar").style.display = "flex";
-
-    }
+        }
 }
 
 /*Función para DESENCRIPTAR la cadena de texto*/
@@ -101,9 +108,9 @@ function desencriptar(cadenaDesencriptada){
 
         return " ";
     } else {
+        cadenaDesencriptada = cadenaDesencriptada.replaceAll(/[^0-9a-z.,; ]/g,"");
         for (let j=0; j<llaves.length; j++){
             if (cadenaDesencriptada.includes(llaves[j][1])) {
-                cadenaDesencriptada = cadenaDesencriptada.replaceAll(/[^0-9a-z.,; ]/g,"");
                 cadenaDesencriptada = cadenaDesencriptada.replaceAll(llaves[j][1],llaves[j][0]);
             }
         }
